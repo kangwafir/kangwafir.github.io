@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soal Al-Qur'an Hadis - Menuntut Ilmu (Kelas 7 MTs)</title>
+  <style>
+    :root{--bg:#f7f9fb;--card:#fff;--accent:#0b5ed7;--muted:#6b7280}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;min-height:100vh;background:linear-gradient(180deg,var(--bg),#eef4ff);padding:24px}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(11,78,215,0.06);margin-bottom:16px}
+    ol{padding-left:18px}
+    .q{margin-bottom:18px}
+    /* pastikan pilihan tampil satu per baris (4 baris ke bawah) */
+    .choices{margin-top:8px}
+    .choices label{display:block;padding:8px 10px;border-radius:8px;margin:6px 0;cursor:pointer;border:1px solid rgba(11,78,215,0.06)}
+    input[type='radio']{margin-right:8px}
+    textarea{width:100%;min-height:64px;padding:8px;border-radius:8px;border:1px solid #e2e8f0}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer}
+    .result{padding:12px;border-radius:8px;margin-top:12px}
+    .correct{background:#ecfdf5;color:#065f46}
+    .wrong{background:#fff1f2;color:#9f1239}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Soal Al-Qur'an Hadis - Menuntut Ilmu (Kelas 7 MTs)</h1>
+    <p>Kerjakan soal berikut dengan teliti, kemudian klik tombol <strong>Nilai Jawaban</strong> untuk melihat hasilnya.</p>
+
+    <form id="quizForm" class="card" autocomplete="off">
+      <ol>
+        <li class="q">
+          <div>1. Arti hadis <em>طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</em> adalah ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q1" value="A">A. Menuntut ilmu adalah kewajiban bagi sebagian orang</label>
+            <label><input type="radio" name="q1" value="B">B. Menuntut ilmu adalah kewajiban bagi setiap Muslim</label>
+            <label><input type="radio" name="q1" value="C">C. Ilmu itu wajib hanya bagi ulama</label>
+            <label><input type="radio" name="q1" value="D">D. Menuntut ilmu hanya untuk laki-laki</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>2. Hadis tentang menuntut ilmu diriwayatkan oleh ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q2" value="A">A. Imam Bukhari</label>
+            <label><input type="radio" name="q2" value="B">B. Imam Muslim</label>
+            <label><input type="radio" name="q2" value="C">C. Imam Ibnu Majah</label>
+            <label><input type="radio" name="q2" value="D">D. Imam Tirmidzi</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>3. Kata <strong>طَلَبُ الْعِلْمِ</strong> berarti ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q3" value="A">A. Mencintai ilmu</label>
+            <label><input type="radio" name="q3" value="B">B. Mengajarkan ilmu</label>
+            <label><input type="radio" name="q3" value="C">C. Menuntut atau mencari ilmu</label>
+            <label><input type="radio" name="q3" value="D">D. Mengamalkan ilmu</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>4. Tujuan menuntut ilmu dalam Islam adalah ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q4" value="A">A. Agar dipuji orang lain</label>
+            <label><input type="radio" name="q4" value="B">B. Untuk memperoleh jabatan</label>
+            <label><input type="radio" name="q4" value="C">C. Untuk mendapatkan kebahagiaan dunia dan akhirat</label>
+            <label><input type="radio" name="q4" value="D">D. Agar dianggap pintar</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>5. Salah satu tanda orang yang berilmu adalah ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q5" value="A">A. Sombong dan merasa paling benar</label>
+            <label><input type="radio" name="q5" value="B">B. Rendah hati dan suka berbagi pengetahuan</label>
+            <label><input type="radio" name="q5" value="C">C. Malas belajar</label>
+            <label><input type="radio" name="q5" value="D">D. Cepat marah ketika diajar</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>6. Menurut hadis, menuntut ilmu itu wajib bagi ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q6" value="A">A. Laki-laki saja</label>
+            <label><input type="radio" name="q6" value="B">B. Perempuan saja</label>
+            <label><input type="radio" name="q6" value="C">C. Anak-anak saja</label>
+            <label><input type="radio" name="q6" value="D">D. Setiap Muslim tanpa membedakan jenis kelamin</label>
+          </div>
+        </li>
+
+        <li class="q">
+          <div>7. Ilmu yang paling utama untuk dipelajari oleh seorang Muslim adalah ...</div>
+          <div class="choices">
+            <label><input type="radio" name="q7" value="A">A. Ilmu sihir</label>
+            <label><input type="radio" name="q7" value="B">B. Ilmu agama yang mendekatkan diri kepada Allah</label>
+            <label><input type="radio" name="q7" value="C">C. Ilmu yang bermanfaat untuk menipu orang lain</label>
+            <label><input type="radio" name="q7" value="D">D. Ilmu yang menjauhkan dari ibadah</label>
+          </div>
+        </li>
+
+        <li class="q">8. Sebutkan dua manfaat menuntut ilmu menurut ajaran Islam!<br>
+          <textarea name="q8" placeholder="Tulis jawaban singkat"></textarea>
+        </li>
+
+        <li class="q">9. Jelaskan makna “fardhu” dalam hadis “Tholabul ‘ilmi fariidhatun ‘ala kulli muslimin”!<br>
+          <textarea name="q9" placeholder="Tulis jawaban singkat"></textarea>
+        </li>
+
+        <li class="q">10. Sebutkan tiga sikap yang harus dimiliki seorang penuntut ilmu!<br>
+          <textarea name="q10" placeholder="Tulis jawaban singkat"></textarea>
+        </li>
+
+      </ol>
+
+      <button type="button" id="submitBtn">Nilai Jawaban</button>
+      <div id="resultArea" class="result"></div>
+    </form>
+  </div>
+
+  <script>
+    const kunci = {q1:'B',q2:'C',q3:'C',q4:'C',q5:'B',q6:'D',q7:'B'};
+    const btn = document.getElementById('submitBtn');
+    const form = document.getElementById('quizForm');
+    const resultArea = document.getElementById('resultArea');
+
+    btn.addEventListener('click',()=>{
+      let benar = 0;
+      for(const key in kunci){
+        const val = form.querySelector(`input[name="${key}"]:checked`);
+        if(val && val.value === kunci[key]) benar++;
+      }
+      const total = Object.keys(kunci).length;
+      const nilai = Math.round((benar/total)*100);
+      resultArea.innerHTML = `<div class='correct'>Nilai Anda: <strong>${nilai}</strong> (${benar} benar dari ${total})</div>`;
+    });
+// Simpan hasil ke Google Sheet
+const nama = prompt("Masukkan nama lengkap Anda:");
+fetch("URL_WEB_APP_ANDA", {
+  method: "POST",
+  body: JSON.stringify({
+    nama: nama,
+    nilai: nilai,
+    jawabanBenar: benar,
+    totalSoal: total
+  }),
+  headers: {"Content-Type": "application/json"}
+})
+.then(r => r.text())
+.then(alert);
+
+  </script>
+</body>
+</html>
