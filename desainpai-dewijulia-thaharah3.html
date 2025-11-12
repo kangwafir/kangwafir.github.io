@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Pembelajaran Thaharah</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e8f5e9, #f9f9f9);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4caf50;
+      color: white;
+      padding: 25px 10px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .materi-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      background: white;
+      width: 280px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .card button:hover {
+      background-color: #45a049;
+    }
+
+    .penjelasan {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+      font-size: 14px;
+      text-align: justify;
+      background: #f1f8e9;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      margin-top: 40px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Media Pembelajaran Thaharah</h1>
+    <p>Belajar Bersuci dengan Cara yang Menyenangkan 🌿</p>
+  </header>
+
+  <main>
+    <h2>🌸 Materi Thaharah</h2>
+    <p>Pelajari tiga cara bersuci dalam Islam: Wudhu, Mandi Wajib, dan Tayammum. Klik tombol di bawah untuk melihat penjelasan!</p>
+
+    <div class="materi-container">
+      <div class="card">
+        <h3>Wudhu</h3>
+        <button onclick="tampilkanPenjelasan(0)">Lihat Penjelasan</button>
+        <div class="penjelasan" id="penjelasan0">
+          <p>Wudhu adalah membersihkan diri dengan air untuk menghilangkan hadas kecil sebelum salat. Rukun wudhu ada enam: niat, membasuh wajah, membasuh tangan, mengusap kepala, membasuh kaki, dan tertib.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mandi Wajib</h3>
+        <button onclick="tampilkanPenjelasan(1)">Lihat Penjelasan</button>
+        <div class="penjelasan" id="penjelasan1">
+          <p>Mandi wajib dilakukan untuk menghilangkan hadas besar, seperti setelah junub, haid, atau nifas. Niat dan membasuh seluruh tubuh secara merata menjadi syarat sahnya mandi wajib.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tayammum</h3>
+        <button onclick="tampilkanPenjelasan(2)">Lihat Penjelasan</button>
+        <div class="penjelasan" id="penjelasan2">
+          <p>Tayammum dilakukan sebagai pengganti wudhu atau mandi wajib ketika tidak ada air. Dilakukan dengan debu yang suci, cukup niat, lalu mengusap wajah dan tangan hingga pergelangan.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Media Pembelajaran PAI – Thaharah</p>
+  </footer>
+
+  <script>
+    function tampilkanPenjelasan(index) {
+      const penjelasan = document.getElementById("penjelasan" + index);
+      if (penjelasan.style.display === "block") {
+        penjelasan.style.display = "none";
+      } else {
+        penjelasan.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
