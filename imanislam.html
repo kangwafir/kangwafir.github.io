@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar Islam & Iman - Lengkap & Interaktif</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5; /* Latar belakang abu-abu muda */
+            color: #333;
+        }
+
+        .header-section {
+            background: linear-gradient(to right, #4CAF50, #81C784); /* Gradien hijau cerah */
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .header-section .display-4 {
+            font-weight: 700;
+        }
+
+        .rukun-card {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .rukun-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .rukun-card .card-body {
+            z-index: 2; 
+            position: relative;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        /* Warna spesifik untuk Rukun Islam */
+        .rukun-islam-card {
+            background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9); /* Hijau muda */
+        }
+        .rukun-islam-card .card-title {
+            color: #2E7D32; /* Hijau gelap */
+        }
+
+        /* Warna spesifik untuk Rukun Iman */
+        .rukun-iman-card {
+            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb); /* Biru muda */
+        }
+        .rukun-iman-card .card-title {
+            color: #1976D2; /* Biru gelap */
+        }
+
+        /* Efek Gambar Samar (Placeholder) - Biarkan saja */
+        .rukun-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        /* Penanda untuk placeholder gambar. Ganti URL ini dengan gambar asli Anda */
+        .rukun-card[data-rukun="islam1"]::before { background-image: url('https://via.placeholder.com/150/e8f5e9/2E7D32?text=Syahadat'); }
+        .rukun-card[data-rukun="islam2"]::before { background-image: url('https://via.placeholder.com/150/e8f5e9/2E7D32?text=Shalat'); }
+        .rukun-card[data-rukun="islam3"]::before { background-image: url('https://via.placeholder.com/150/e8f5e9/2E7D32?text=Zakat'); }
+        .rukun-card[data-rukun="islam4"]::before { background-image: url('https://via.placeholder.com/150/e8f5e9/2E7D32?text=Puasa'); }
+        .rukun-card[data-rukun="islam5"]::before { background-image: url('https://via.placeholder.com/150/e8f5e9/2E7D32?text=Haji'); }
+        .rukun-card[data-rukun="iman1"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Allah'); }
+        .rukun-card[data-rukun="iman2"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Malaikat'); }
+        .rukun-card[data-rukun="iman3"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Kitab'); }
+        .rukun-card[data-rukun="iman4"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Rasul'); }
+        .rukun-card[data-rukun="iman5"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Kiamat'); }
+        .rukun-card[data-rukun="iman6"]::before { background-image: url('https://via.placeholder.com/150/e3f2fd/1976D2?text=Qada'); }
+
+
+        /* Modal Styling */
+        .modal-header {
+            background: linear-gradient(to right, #28a745, #218838);
+            color: white;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        /* Quiz Section */
+        #quiz-section {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 5px solid #007bff;
+            border-radius: 8px;
+        }
+        
+        /* Pilihan Jawaban */
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px; 
+            cursor: pointer;
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px; 
+            transition: all 0.2s ease-in-out;
+            text-align: left;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .quiz-options label:hover {
+            background-color: #f1f7fe;
+            border-color: #007bff; 
+            transform: translateY(-2px);
+        }
+        .quiz-options input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+            transform: scale(1.01);
+        }
+        .option-prefix {
+            font-weight: 700;
+            margin-right: 10px;
+            display: inline-block;
+            color: #28a745;
+            min-width: 20px;
+        }
+        .quiz-options input[type="radio"]:checked + label .option-prefix {
+            color: white; 
+        }
+
+        .quiz-feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .quiz-feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* Progress Bar Styling */
+        .progress-container {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .progress-label {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        /* Footer Styling */
+        .footer-section {
+            background-color: #343a40; 
+            color: #f8f9fa; 
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gaya untuk Detail Materi yang baru */
+        #rukun-deskripsi-detail {
+            background-color: #e3f9e9; /* Hijau muda untuk kontras */
+            border-left: 5px solid #4CAF50;
+            margin-top: 15px;
+            font-style: italic;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-section text-center">
+        <h1 class="display-4"><i class="fas fa-mosque me-3"></i>Belajar Rukun Islam & Rukun Iman</h1>
+        <p class="lead">Pilar Kehidupan Seorang Muslim | Interaktif, Menyenangkan & Uji Pengetahuanmu!</p>
+    </header>
+
+    <div class="container my-5">
+        
+        <section id="rukun-islam" class="mb-5">
+            <h2 class="text-center mb-4 text-success"><i class="fas fa-hand-holding-heart me-2"></i>Rukun Islam</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-islam-card" data-rukun="islam1">
+                        <div class="card-body">
+                            <i class="fas fa-scroll fa-2x mb-2" style="color:#2E7D32;"></i>
+                            <h5 class="card-title">1. Syahadat</h5>
+                            <p class="card-text">Pernyataan Kesaksian</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-islam-card" data-rukun="islam2">
+                        <div class="card-body">
+                            <i class="fas fa-prayer fa-2x mb-2" style="color:#2E7D32;"></i>
+                            <h5 class="card-title">2. Shalat</h5>
+                            <p class="card-text">Mendirikan Shalat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-islam-card" data-rukun="islam3">
+                        <div class="card-body">
+                            <i class="fas fa-hand-holding-usd fa-2x mb-2" style="color:#2E7D32;"></i>
+                            <h5 class="card-title">3. Zakat</h5>
+                            <p class="card-text">Mengeluarkan Zakat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-islam-card" data-rukun="islam4">
+                        <div class="card-body">
+                            <i class="fas fa-moon fa-2x mb-2" style="color:#2E7D32;"></i>
+                            <h5 class="card-title">4. Puasa</h5>
+                            <p class="card-text">Puasa Ramadhan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-islam-card" data-rukun="islam5">
+                        <div class="card-body">
+                            <i class="fas fa-kaaba fa-2x mb-2" style="color:#2E7D32;"></i>
+                            <h5 class="card-title">5. Haji</h5>
+                            <p class="card-text">Haji ke Baitullah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5 border-success opacity-25">
+
+        <section id="rukun-iman" class="mb-5">
+            <h2 class="text-center mb-4 text-primary"><i class="fas fa-star me-2"></i>Rukun Iman</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman1">
+                        <div class="card-body">
+                            <i class="fas fa-cloud-sun fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">1. Allah SWT</h5>
+                            <p class="card-text">Iman kepada Allah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman2">
+                        <div class="card-body">
+                            <i class="fas fa-angel fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">2. Malaikat</h5>
+                            <p class="card-text">Iman kepada Malaikat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman3">
+                        <div class="card-body">
+                            <i class="fas fa-book-open fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">3. Kitab</h5>
+                            <p class="card-text">Iman kepada Kitab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman4">
+                        <div class="card-body">
+                            <i class="fas fa-user-friends fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">4. Rasul</h5>
+                            <p class="card-text">Iman kepada Rasul</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman5">
+                        <div class="card-body">
+                            <i class="fas fa-clock fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">5. Akhir</h5>
+                            <p class="card-text">Iman kepada Hari Akhir</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card text-center rukun-card rukun-iman-card" data-rukun="iman6">
+                        <div class="card-body">
+                            <i class="fas fa-dice fa-2x mb-2" style="color:#1976D2;"></i>
+                            <h5 class="card-title">6. Qada & Qadar</h5>
+                            <p class="card-text">Iman kepada Qada & Qadar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5 border-primary opacity-25">
+
+        <section id="quiz-section" class="text-center">
+            <h2 class="mb-4"><i class="fas fa-question-circle me-2"></i>Uji Pemahamanmu!</h2>
+            
+            <div class="progress-container container">
+                <div class="progress-label">Kemajuan Anda: <span id="progress-text">0/5</span> Pertanyaan</div>
+                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="height: 10px;">
+                    <div class="progress-bar" id="quiz-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <form id="quizForm">
+                
+                <div class="quiz-question">
+                    <p>1. Apa rukun Islam yang pertama?</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="q1a1" name="q1" value="Shalat" hidden>
+                        <label for="q1a1"><span class="option-prefix">A.</span> Shalat</label>
+                        
+                        <input type="radio" id="q1a2" name="q1" value="Syahadat" hidden>
+                        <label for="q1a2"><span class="option-prefix">B.</span> Syahadat</label>
+                        
+                        <input type="radio" id="q1a3" name="q1" value="Puasa" hidden>
+                        <label for="q1a3"><span class="option-prefix">C.</span> Puasa</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>2. Meyakini adanya malaikat termasuk rukun Iman yang ke berapa?</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="q2a1" name="q2" value="Pertama" hidden>
+                        <label for="q2a1"><span class="option-prefix">A.</span> Pertama</label>
+                        
+                        <input type="radio" id="q2a2" name="q2" value="Kedua" hidden>
+                        <label for="q2a2"><span class="option-prefix">B.</span> Kedua</label>
+                        
+                        <input type="radio" id="q2a3" name="q2" value="Ketiga" hidden>
+                        <label for="q2a3"><span class="option-prefix">C.</span> Ketiga</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>3. Berikut ini yang BUKAN termasuk rukun Islam adalah?</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="q3a1" name="q3" value="Zakat" hidden>
+                        <label for="q3a1"><span class="option-prefix">A.</span> Zakat</label>
+                        
+                        <input type="radio" id="q3a2" name="q3" value="Haji" hidden>
+                        <label for="q3a2"><span class="option-prefix">B.</span> Haji</label>
+                        
+                        <input type="radio" id="q3a3" name="q3" value="Iman kepada Qada dan Qadar" hidden>
+                        <label for="q3a3"><span class="option-prefix">C.</span> Iman kepada Qada dan Qadar</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>4. Berapa jumlah rukun Iman?</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="q4a1" name="q4" value="5" hidden>
+                        <label for="q4a1"><span class="option-prefix">A.</span> 5</label>
+                        
+                        <input type="radio" id="q4a2" name="q4" value="6" hidden>
+                        <label for="q4a2"><span class="option-prefix">B.</span> 6</label>
+                        
+                        <input type="radio" id="q4a3" name="q4" value="7" hidden>
+                        <label for="q4a3"><span class="option-prefix">C.</span> 7</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p>5. Kitab suci terakhir yang wajib kita yakini adalah?</p>
+                    <div class="quiz-options">
+                        <input type="radio" id="q5a1" name="q5" value="Taurat" hidden>
+                        <label for="q5a1"><span class="option-prefix">A.</span> Taurat</label>
+                        
+                        <input type="radio" id="q5a2" name="q5" value="Injil" hidden>
+                        <label for="q5a2"><span class="option-prefix">B.</span> Injil</label>
+                        
+                        <input type="radio" id="q5a3" name="q5" value="Al-Qur'an" hidden>
+                        <label for="q5a3"><span class="option-prefix">C.</span> Al-Qur'an</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg mt-4 btn-submit-quiz">Periksa Jawaban</button>
+            </form>
+
+            <div id="quiz-results" class="mt-4 p-3 border rounded d-none">
+                <h4>Hasil Kuis Anda: <span id="quiz-score">0</span> dari <span id="quiz-total"></span></h4>
+                <div id="quiz-feedback-container" class="mt-3"></div>
+                <button class="btn btn-outline-primary mt-3" onclick="resetQuiz()">Ulangi Kuis</button>
+            </div>
+        </section>
+
+    </div>
+    
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel">Detail Rukun</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body-content">
+                    <h4 id="rukun-judul"></h4>
+                    <p id="rukun-deskripsi"></p>
+                    
+                    <hr>
+                    <h6><i class="fas fa-book-reader me-2"></i>**Pelajari Lebih Lanjut: Pemahaman Mendalam**</h6>
+                    <p id="rukun-deskripsi-detail" class="alert alert-info p-3"></p>
+                    <p><strong>Dalil Pendukung:</strong> <span id="rukun-dalil"></span></p>
+                    <p><strong>Penerapan Praktis:</strong> <span id="rukun-penerapan"></span></p>
+                    
+                    <p class="text-muted"><small><strong>Referensi Ilmiah (Dalil Utama):</strong> <span id="rukun-referensi-ilmiah"></span></small></p>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success me-auto">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-section text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Program Pembelajaran Rukun Iman & Islam.</p>
+            <p class="mb-0">Dibuat dan dikembangkan oleh: <strong>Wafiruddin Isnan</strong></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Data Rukun DENGAN MATERI TAMBAHAN LENGKAP
+        const dataRukun = {
+            islam1: {
+                judul: "Syahadat",
+                deskripsi: "Pernyataan keimanan yang menjadi pintu masuk ke dalam Islam: 'Aku bersaksi bahwa tiada tuhan selain Allah dan aku bersaksi bahwa Muhammad adalah utusan Allah.'",
+                dalil: "QS. Ali Imran ayat 18",
+                penerapan: "Diucapkan dengan lisan, diyakini dalam hati, dan diamalkan dalam perbuatan (sebagai dasar dari semua ibadah).",
+                deskripsi_detail: "Syahadat bukan sekadar ucapan lisan, tetapi merupakan **ikrar kontrak seumur hidup** dengan Allah SWT, yang menuntut konsekuensi berupa totalitas kepatuhan kepada syariat. Syahadat memuat dua dimensi: *Nafi* (penolakan/meniadakan semua tuhan selain Allah) dan *Itsbat* (penetapan/mengakui hanya Allah sebagai Tuhan). Komitmen ini adalah pondasi tauhid yang memisahkan antara keimanan dan kekafiran. Secara sosiologis, Syahadat adalah identitas fundamental yang menyatukan seluruh umat Islam dalam satu ikatan persaudaraan yang didasari oleh keyakinan yang sama. Tanpa fondasi Syahadat yang kokoh, semua amalan Islam praktis tidak sah.",
+                referensi_ilmiah: "Al-Qur'an, Surah Muhammad (47): 19"
+            },
+            islam2: {
+                judul: "Shalat",
+                deskripsi: "Ibadah wajib berupa serangkaian ucapan dan gerakan yang dimulai dengan takbir dan diakhiri dengan salam, dilakukan lima kali sehari semalam.",
+                dalil: "QS. Al-Baqarah ayat 43",
+                penerapan: "Melaksanakan Shalat wajib 5 waktu dengan tuma'ninah dan menjaga kekhusyukan.",
+                deskripsi_detail: "Shalat adalah *mi'raj* (perjalanan spiritual) bagi seorang mukmin, yaitu momen komunikasi langsung dengan Pencipta. Gerakan fisik (rukun dan sujud) adalah manifestasi ketundukan total, sementara bacaan (Al-Fatihah dan ayat) adalah nutrisi spiritual. Fungsi Shalat yang utama adalah **mencegah perbuatan keji dan mungkar** (QS. Al-Ankabut 29:45), menjadikannya benteng moral harian. Shalat yang dikerjakan tepat waktu membentuk disiplin diri, manajemen waktu, dan konsistensi mental yang esensial dalam kehidupan.",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-'Ankabut (29): 45"
+            },
+            islam3: {
+                judul: "Zakat",
+                deskripsi: "Harta tertentu yang wajib dikeluarkan oleh seorang Muslim kepada golongan yang berhak (mustahik) sesuai syarat yang ditentukan.",
+                dalil: "QS. At-Taubah ayat 103",
+                penerapan: "Mengeluarkan Zakat Fitrah setahun sekali dan Zakat Mal (harta) jika telah mencapai nisab dan haul.",
+                deskripsi_detail: "Zakat memiliki peran ganda: sebagai ibadah personal (membersihkan harta) dan sebagai sistem ekonomi sosial. Zakat adalah **hak fakir miskin** yang dititipkan pada orang kaya, bukan sekadar sedekah. Tujuannya adalah pemerataan kekayaan, mengurangi kesenjangan sosial, dan mencegah penimbunan harta. Konsep Zakat Mal sangat detail, mencakup emas, perak, hasil pertanian, ternak, hingga harta perniagaan, menunjukkan perhatian Islam pada seluruh aspek ekonomi.",
+                referensi_ilmiah: "Al-Qur'an, Surah At-Taubah (9): 103"
+            },
+            islam4: {
+                judul: "Puasa (Shaum)",
+                deskripsi: "Menahan diri dari makan, minum, dan hal-hal yang membatalkan puasa, mulai dari terbit fajar hingga terbenam matahari selama bulan Ramadhan.",
+                dalil: "QS. Al-Baqarah ayat 183",
+                penerapan: "Berpuasa sebulan penuh di bulan Ramadhan dan menjaga diri dari perbuatan yang sia-sia.",
+                deskripsi_detail: "Puasa adalah ibadah *Sirriyah* (rahasia) antara hamba dan Allah, yang pahalanya dijanjikan langsung oleh Allah. Secara fisik, ia menyehatkan (*shaumu tashihhu*). Secara spiritual, ia melatih **kesabaran, kejujuran, dan empati** terhadap kesulitan orang miskin. Puasa mengajarkan bahwa manusia mampu mengendalikan kebutuhan biologisnya, sehingga ia bisa fokus pada tujuan yang lebih tinggi, yaitu ketaqwaan (*tattaqun*).",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-Baqarah (2): 183"
+            },
+            islam5: {
+                judul: "Haji",
+                deskripsi: "Berziarah ke Baitullah di Mekkah dengan syarat dan rukun tertentu, wajib bagi yang mampu.",
+                dalil: "QS. Ali Imran ayat 97",
+                penerapan: "Melaksanakan ibadah Haji minimal sekali seumur hidup bagi yang memiliki kemampuan fisik dan finansial.",
+                deskripsi_detail: "Haji adalah ibadah yang melibatkan tiga aspek (fisik, finansial, dan spiritual) dan merupakan **kongres internasional** umat Islam tahunan. Melalui manasik yang seragam, seperti berpakaian ihram (menghilangkan simbol status sosial) dan thawaf (mengelilingi Ka'bah), haji mengajarkan kesetaraan, kerendahan hati, dan persatuan di hadapan Allah. Haji yang mabrur dijanjikan balasannya hanyalah surga, menunjukkan tingginya nilai ibadah ini.",
+                referensi_ilmiah: "Al-Qur'an, Surah Ali 'Imran (3): 97"
+            },
+            iman1: {
+                judul: "Iman kepada Allah SWT",
+                deskripsi: "Meyakini dengan sepenuh hati bahwa Allah adalah satu-satunya Tuhan yang berhak disembah, pencipta, pengatur, dan pemilik alam semesta.",
+                dalil: "QS. Al-Ikhlas (seluruhnya)",
+                penerapan: "Beribadah hanya kepada Allah, menjalankan perintah-Nya, dan menjauhi larangan-Nya.",
+                deskripsi_detail: "Keimanan ini bersifat menyeluruh: mengenal Allah melalui Asmaul Husna dan Sifat-sifat-Nya. Mengimani Allah menghasilkan **ketenangan jiwa dan kepasrahan (tawakal)**. Ketika Muslim yakin Allah adalah Al-Khalik (Pencipta) dan Al-Mudabbir (Pengatur), ia tidak akan mudah putus asa menghadapi kesulitan. Ini adalah fondasi dari semua etika dan moral, karena semua perbuatan baik berlandaskan pada mencari ridha-Nya.",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-Ikhlas (112): 1-4"
+            },
+            iman2: {
+                judul: "Iman kepada Malaikat Allah",
+                deskripsi: "Meyakini keberadaan Malaikat sebagai makhluk Allah yang diciptakan dari cahaya, senantiasa taat, dan tidak pernah mendurhakai perintah-Nya.",
+                dalil: "QS. An-Nisa ayat 136",
+                penerapan: "Percaya bahwa ada Malaikat pencatat amal (Raqib & Atid) sehingga termotivasi untuk berbuat baik.",
+                deskripsi_detail: "Malaikat berfungsi sebagai **pelaksana mutlak** dari kehendak Allah dalam sistem kosmik. Keimanan ini membuahkan *muraqabah* (perasaan selalu diawasi). Keyakinan terhadap Malaikat pencatat amal (Raqib dan Atid) mendorong Muslim untuk menjaga perbuatan, lisan, dan hati. Selain itu, Malaikat juga bertugas membawa wahyu (Jibril) dan mengatur rezeki (Mikail), menegaskan bahwa seluruh alam semesta bergerak dalam harmoni ilahiah.",
+                referensi_ilmiah: "Al-Qur'an, Surah An-Nisa (4): 136"
+            },
+            iman3: {
+                judul: "Iman kepada Kitab-kitab Allah",
+                deskripsi: "Meyakini bahwa Allah telah menurunkan kitab-kitab suci (Taurat, Zabur, Injil, Al-Qur'an) sebagai pedoman hidup bagi manusia.",
+                dalil: "QS. Al-Baqarah ayat 4",
+                penerapan: "Membaca, memahami, dan mengamalkan ajaran Al-Qur'an sebagai kitab suci terakhir dan penyempurna.",
+                deskripsi_detail: "Kitab suci adalah **peta jalan** yang diturunkan Allah untuk membimbing manusia dari kegelapan menuju cahaya. Mengimani Kitab berarti mengakui kebenaran Taurat, Zabur, dan Injil dalam bentuk aslinya, namun menjadikan Al-Qur'an sebagai satu-satunya pedoman yang sah dan *hujjah* (argumentasi) hingga akhir zaman, karena ia dijamin kemurniannya. Keimanan ini mendorong Muslim untuk menjadikan ilmu dan membaca sebagai prioritas utama.",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-Baqarah (2): 4"
+            },
+            iman4: {
+                judul: "Iman kepada Nabi dan Rasul",
+                deskripsi: "Meyakini bahwa Allah mengutus Nabi dan Rasul untuk menyampaikan wahyu dan membimbing umat manusia ke jalan yang benar.",
+                dalil: "QS. An-Nisa ayat 136",
+                penerapan: "Mencontoh akhlak mulia Nabi Muhammad SAW dan mengikuti sunnahnya.",
+                deskripsi_detail: "Nabi dan Rasul diutus sebagai **contoh terbaik (Uswah Hasanah)** dalam setiap aspek kehidupan. Mereka adalah manusia pilihan yang menerima wahyu dan menyampaikannya. Keyakinan ini menuntut Muslim untuk mempelajari kisah dan sunnah Rasulullah SAW, meneladani akhlaknya yang *agung* (*khuluqin 'azhim*), dan menjadikan ajarannya sebagai metode hidup.",
+                referensi_ilmiah: "Al-Qur'an, Surah An-Nisa (4): 136"
+            },
+            iman5: {
+                judul: "Iman kepada Hari Akhir (Kiamat)",
+                deskripsi: "Meyakini akan datangnya Hari Kiamat, hari pembalasan, dan kehidupan setelah kematian (akhirat).",
+                dalil: "QS. Al-Hajj ayat 7",
+                penerapan: "Selalu beramal shalih dan menjauhi maksiat sebagai bekal di akhirat.",
+                deskripsi_detail: "Hari Akhir adalah penutup perjalanan duniawi dan awal kehidupan abadi. Keyakinan ini adalah **sumber motivasi paling kuat** bagi seorang Muslim untuk berbuat kebaikan, karena ia percaya bahwa setiap amal sekecil apapun akan dihitung (Yaumul Hisab). Keyakinan akan adanya surga dan neraka membuat Muslim menjalani hidup dengan penuh tanggung jawab (*accountability*) dan berhati-hati dalam setiap tindakan.",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-Hajj (22): 7"
+            },
+            iman6: {
+                judul: "Iman kepada Qada dan Qadar",
+                deskripsi: "Meyakini bahwa segala sesuatu, baik dan buruk, telah ditetapkan oleh Allah SWT (takdir).",
+                dalil: "QS. Al-Qamar ayat 49",
+                penerapan: "Berusaha (ikhtiar) sebaik mungkin dan menerima segala hasil dengan tawakal, meyakini semua adalah ketetapan terbaik dari Allah.",
+                deskripsi_detail: "Ini adalah rukun iman yang paling menantang. Keimanan ini mengajarkan konsep **ikhtiar (usaha maksimal)** dan **tawakal (berserah diri)**. Seorang Muslim diwajibkan berusaha keras (karena takdir tidak diketahui), dan setelah hasil didapatkan (baik atau buruk), ia harus berlapang dada (karena itu adalah ketetapan Allah). Konsep ini menghilangkan kesombongan saat sukses dan menghilangkan keputusasaan saat gagal, menciptakan mental yang tangguh.",
+                referensi_ilmiah: "Al-Qur'an, Surah Al-Qamar (54): 49"
+            }
+        };
+
+        const rukunCards = document.querySelectorAll('.rukun-card');
+        const detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
+        const modalTitle = document.getElementById('detailModalLabel');
+        const rukunJudul = document.getElementById('rukun-judul');
+        const rukunDeskripsi = document.getElementById('rukun-deskripsi');
+        const rukunDalil = document.getElementById('rukun-dalil');
+        const rukunPenerapan = document.getElementById('rukun-penerapan');
+        
+        // DEKLARASI BARU UNTUK MATERI RINCI
+        const rukunDeskripsiDetail = document.getElementById('rukun-deskripsi-detail'); 
+        const rukunReferensiIlmiah = document.getElementById('rukun-referensi-ilmiah'); 
+        // AKHIR DEKLARASI BARU
+
+        // Logic Modal
+        rukunCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const rukunKey = this.getAttribute('data-rukun');
+                const rukunData = dataRukun[rukunKey];
+
+                if (rukunData) {
+                    let jenisRukun = rukunKey.startsWith('islam') ? 'Rukun Islam' : 'Rukun Iman';
+                    modalTitle.textContent = `${jenisRukun}: ${rukunData.judul}`;
+                    rukunJudul.textContent = rukunData.judul;
+                    rukunDeskripsi.textContent = rukunData.deskripsi;
+                    rukunDalil.textContent = rukunData.dalil;
+                    rukunPenerapan.textContent = rukunData.penerapan;
+                    
+                    // MENGISI DATA RINCI BARU
+                    rukunDeskripsiDetail.textContent = rukunData.deskripsi_detail; 
+                    rukunReferensiIlmiah.textContent = rukunData.referensi_ilmiah; 
+                    // AKHIR PENGISIAN DATA RINCI BARU
+
+                    detailModal.show();
+                }
+            });
+        });
+
+        // --- Logic KUIS Interaktif dan Progress Bar ---
+
+        const quizForm = document.getElementById('quizForm');
+        const quizResults = document.getElementById('quiz-results');
+        const quizScoreSpan = document.getElementById('quiz-score');
+        const quizTotalSpan = document.getElementById('quiz-total');
+        const quizFeedbackContainer = document.getElementById('quiz-feedback-container');
+        const quizProgressBar = document.getElementById('quiz-progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        const correctAnswers = {
+            q1: "Syahadat",
+            q2: "Kedua",
+            q3: "Iman kepada Qada dan Qadar",
+            q4: "6",
+            q5: "Al-Qur'an"
+        };
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        quizTotalSpan.textContent = totalQuestions;
+        
+        // Fungsi untuk menghitung dan memperbarui Progress Bar secara Real-time
+        function updateQuizProgress() {
+            let answeredQuestions = 0;
+            for (const qKey in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${qKey}"]:checked`);
+                if (selectedOption) {
+                    answeredQuestions++;
+                }
+            }
+
+            const answeredPercentage = (answeredQuestions / totalQuestions) * 100;
+            quizProgressBar.style.width = `${answeredPercentage}%`;
+            quizProgressBar.setAttribute('aria-valuenow', answeredQuestions);
+            progressText.textContent = `${answeredQuestions}/${totalQuestions}`;
+        }
+        
+        // Listener Real-time pada setiap perubahan opsi radio
+        quizForm.addEventListener('change', updateQuizProgress);
+
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            checkQuiz();
+        });
+
+        function checkQuiz() {
+            let score = 0;
+            quizFeedbackContainer.innerHTML = ''; 
+
+            for (const qKey in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${qKey}"]:checked`);
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.classList.add('quiz-feedback', 'mt-2', 'p-2', 'rounded', 'text-start');
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[qKey]) {
+                        score++;
+                        feedbackDiv.classList.add('correct');
+                        feedbackDiv.textContent = `Pertanyaan ${qKey.substring(1)}: Benar!`;
+                    } else {
+                        feedbackDiv.classList.add('incorrect');
+                        feedbackDiv.textContent = `Pertanyaan ${qKey.substring(1)}: Salah. Jawaban benar adalah "${correctAnswers[qKey]}".`;
+                    }
+                } else {
+                    feedbackDiv.classList.add('incorrect');
+                    feedbackDiv.textContent = `Pertanyaan ${qKey.substring(1)}: Belum dijawab. Jawaban benar adalah "${correctAnswers[qKey]}".`;
+                }
+                quizFeedbackContainer.appendChild(feedbackDiv);
+            }
+
+            // Progress bar sudah dihandle oleh updateQuizProgress, tapi kita panggil sekali lagi untuk memastikan status terakhir
+            updateQuizProgress(); 
+
+            quizScoreSpan.textContent = score;
+            quizResults.classList.remove('d-none'); 
+            
+            quizResults.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            quizForm.reset(); 
+            quizResults.classList.add('d-none');
+            quizFeedbackContainer.innerHTML = '';
+            
+            // Reset Progress Bar
+            updateQuizProgress(); // Panggil fungsi progress untuk mereset ke 0/5
+        }
+        
+        // Inisialisasi Progress Bar saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            resetQuiz(); 
+        });
+
+    </script>
+
+</body>
+</html>
