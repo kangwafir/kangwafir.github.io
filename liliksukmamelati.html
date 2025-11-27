@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran (Satu Halaman)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* CSS tambahan untuk tata letak satu halaman */
+        body { 
+            padding-top: 70px; /* Jarak agar konten tidak tertutup fixed navbar */
+            background-color: lightslategray; 
+        }
+        /* Style untuk setiap bagian konten materi/tujuan */
+        .content-section {
+            background-color: lightyellow;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        /* Penyesuaian sticky-top agar tidak tertutup navbar */
+        .sticky-top-adjusted {
+            top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lilik Sokma Melati.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Materi  
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#daftar-materi">Daftar Materi Pembelajaran</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" href="#materi1">1. Aqidah & Akhlak</a></li> 
+                            <li><a class="dropdown-item" href="#materi2">2. Fiqih Ibadah</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#materi3">3. SKI</a></li>
+                        </ul>    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tujuan">Tujuan Pembelajaran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cari</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="https://www.google.com/search" method="get" target="_blank">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Cari di Google..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Cari</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <div class="p-5 mb-4 bg-light rounded-3 shadow-sm mt-4">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold text-primary">Selamat Datang di Media Pembelajaran "Lilik Sokma Melati"</h1>
+                <p class="col-md-8 fs-4">Temukan materi-materi pembelajaran yang interaktif dan mudah dipahami, sesuai dengan Tujuan Pembelajaran yang telah ditetapkan.</p>
+                <a href="#daftar-materi" class="btn btn-primary btn-lg" type="button">Mulai Jelajahi Materi</a>
+            </div>
+        </div>
+        
+        <hr class="my-5">
+
+        <h2 class="mb-4 text-center text-white" id="daftar-materi">Daftar Materi Pembelajaran</h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200?text=Konsep+Dasar" class="card-img-top" alt="Materi 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Akidah dan Akhlak: Dasar-Dasar Keimanan</h5>
+                        <p class="card-text">Mengenal dan Memahami Rukun Iman_Akhlakul Kharimah_Uji Pemahaman.</p>
+                        <span class="badge bg-secondary">Tingkat Dasar</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#materi1" class="btn btn-sm btn-success w-100">Buka Materi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200?text=Layout+Grid" class="card-img-top" alt="Materi 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Fikih Ibadah: Thaharah dan Shalat</h5>
+                        <p class="card-text">Thaharah (Bersuci)_Rukun dan Syarat Sah Sholat.</p>
+                        <span class="badge bg-secondary">Tingkat Menengah</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#materi2" class="btn btn-sm btn-success w-100">Buka Materi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200?text=Interaktif" class="card-img-top" alt="Materi 3">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Sejarah Kebudayaan Islam: Masa Kenabian</h5>
+                        <p class="card-text">Biografi Nabi Muhammad_Masa Khulafaur Rosyidin.</p>
+                        <span class="badge bg-secondary">Tingkat Lanjut</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#materi3" class="btn btn-sm btn-success w-100">Buka Materi</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr class="my-5">
+        
+        <section id="tujuan" class="content-section">
+            <h2 class="mb-4 text-primary text-center">Tujuan Pembelajaran</h2> 
+            <p class="lead text-center">Setelah mempelajari seluruh materi, diharapkan peserta didik mampu mencapai kompetensi berikut:</p>
+
+            <hr class="mb-5">
+
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="m-0">Materi 1: Aqidah & Akhlak</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">1. Memahami dan menjelaskan enam Rukun Iman secara benar.</li>
+                    <li class="list-group-item">2. Mengidentifikasi contoh-contoh Akhlakul Karimah dalam kehidupan sehari-hari.</li>
+                    <li class="list-group-item">3. Menunjukkan perilaku terpuji yang sesuai dengan nilai-nilai Aqidah Islam.</li>
+                </ul>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="m-0">Materi 2: Fiqih Ibadah</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">1. Menjelaskan pengertian dan macam-macam Thaharah (bersuci).</li>
+                    <li class="list-group-item">2. Mendemonstrasikan tata cara berwudhu dan mandi wajib yang sah.</li>
+                    <li class="list-group-item">3. Menyebutkan minimal 5 Rukun Shalat dan 3 Syarat Sah Shalat.</li>
+                </ul>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="m-0">Materi 3: Sejarah Kebudayaan Islam (SKI)</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">1. Menjelaskan biografi singkat Nabi Muhammad SAW.</li>
+                    <li class="list-group-item">2. Menyebutkan nama-nama Khulafaur Rasyidin secara berurutan.</li>
+                    <li class="list-group-item">3. Mengidentifikasi kontribusi penting dari masing-masing Khulafaur Rasyidin.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="my-5">
+        
+        <section id="materi1" class="content-section">
+            <h2 class="mb-4 text-success">1. Aqidah & Akhlak: Dasar-Dasar Keimanan</h2> 
+            
+            <div class="row">
+
+                <div class="col-lg-8">
+                    <p class="lead">Mempelajari hal-hal yang berkaitan dengan keyakinan (Aqidah) dan perilaku mulia (Akhlak) dalam Islam.</p>
+
+                    <hr>
+
+                    <h3 id="iman">1. Mengenal dan Memahami Rukun Iman</h3>
+                    <p>Rukun Iman adalah pilar-pilar keimanan yang harus diyakini oleh setiap muslim. Ada enam (6) rukun iman, yaitu:</p>
+
+                    <ul>
+                        <li>Iman kepada Allah SWT</li>
+                        <li>Iman kepada Malaikat-malaikat Allah</li>
+                        <li>Iman kepada Kitab-kitab Allah</li>
+                        <li>Iman kepada Rosul Allah</li>
+                        <li>Iman kepada Hari Akhir</li>
+                        <li>Iman kepada Qodho dan Qodar</li>
+                    </ul>
+                    <div class="alert alert-danger text-center my-4">
+                        <p class="m-0">Video tentang Rukun iman di YouTube.</p>
+                        
+                        <a href="https://youtu.be/bZ11ZceIKn8?si=KDp-4ZHsB2tRG_l7" target="_blank" class="btn btn-danger mt-2">
+                            KLIK DISINI
+                        </a>
+                    </div>
+                    <h3 id="akhlak">2. Akhlakul Karimah (Akhlak Mulia)</h3>
+                    <p>Akhlak mulia adalah cerminan dari keimanan seseorang. Salah satu akhlak terpenting adalah berbakti kepada orang tua (Birrul Walidain).</p>
+
+                    <div class="alert alert-success" role="alert">
+                    <strong>Dalil:</strong> "Dan Tuhanmu telah memerintahkan supaya kamu tidak menyembah selain Dia dan hendaklah kamu berbuat baik pada ibu-bapakmu sebaik-bainya.Jika salah seorang antara keduanya atau kedua-duanya sampai berumur lanjut dalam pemeliharaan-mu, maka sekali-kali janganlah kamu mengatakan kepada keduanya perkataan "Ah" dan janganlah kamu membentak mereka dan ucapkanlah kepada mereka perkataan yang mulia." (QS. Al-Isra: 23)
+                    </div>
+
+                    <h3 id="latihan1">3. Uji Pemahaman</h3>
+                    <p>Setelah mempelajari materi ini, mari kita uji pemahaman Anda.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPTZibBgcDz2VbBcwXdeP37OuDCgK9pskRSgZuxE3Mskg/viewform?usp=header" target="_blank" class="btn btn-warning btn-lg">Mulai Latihan/Kuis Aqidah</a>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card bg-light mt-4 p-3 sticky-top sticky-top-adjusted shadow-sm">
+                        <h5 class="card-title text-success">Navigasi Materi 1</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#iman">➡️ Rukun Iman</a></li>
+                            <li><a href="#akhlak">➡️ Akhlakul Karimah</a></li>
+                            <li><a href="#latihan1">➡️ Uji Pemahaman</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+        
+        <section id="materi2" class="content-section">
+            <h2 class="mb-4 text-success">2. Fiqih Ibadah: Thaharah dan Shalat</h2> 
+            
+            <div class="row">
+            
+                <div class="col-lg-8">
+                    <p class="lead">Mempelajari hukum-hukum Islam terkait ibadah, khususnya tentang bersuci (Thaharah) dan Shalat.</p>
+
+                    <hr>
+
+                    <h3 id="thaharah">1. Thaharah (Bersuci)</h3>
+                    <p>Thaharah adalah kunci utama diterimanya ibadah Shalat. Thaharah meliputi wudhu dan mandi wajib. Bersuci dilakukan untuk menghilangkan hadas kecil (dengan wudhu) dan hadas besar (dengan mandi wajib).</p>
+                    <div class="alert alert-danger text-center my-4">
+                        <p class="m-0">Video tentang Tata Cara Thaharah di YouTube.</p>
+                        
+                        <a href="https://youtu.be/tolLaWWSEus?si=pIs99UVgdu1Deer1" target="_blank" class="btn btn-danger mt-2">
+                            KLIK DISINI
+                        </a>
+                    </div>
+                    <div class="alert alert-danger text-center my-4">
+                        <p class="m-0">Video tentang Tata Cara Mandi Wajib di YouTube.</p>
+                        
+                        <a href="https://youtube.com/shorts/8D85vwNRuro?si=gxwgf0VZKzZre3ul" target="_blank" class="btn btn-danger mt-2">
+                            KLIK DISINI
+                        </a>
+                    </div>
+                    <h3 id="shalat">2. Rukun dan Syarat Sah Shalat</h3>
+                    <p>Shalat adalah tiang agama. Ada syarat-syarat tertentu yang wajib dipenuhi sebelum dan saat melaksanakan shalat agar sah.</p>
+                    
+                    <h4>Syarat Wajib Shalat:</h4>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Beragama Islam</li>
+                        <li class="list-group-item">Sudah Baligh dan Berakal</li>
+                        <li class="list-group-item">Suci dari Hadas dan Najis</li>
+                        <li class="list-group-item">Muallaf</li>
+                    </ul>
+                    
+                    <h4>Rukun Shalat:</h4>
+                    <ol class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">Niat                   : Niat diucapkan dalam lisan dan dalam hati untuk melakukan shalat. </li>
+                        <li class="list-group-item">Takbiratul ihram       : Mengucapkan "Allahu Akbar" sambil mengangkat tangan untuk memulai shalat.</li>
+                        <li class="list-group-item">Berdiri bagi yang mampu: Berdiri tegak bagi yang mampu melkakukannya. Jika tidak mampu boleh duduk (sesuai kemampuannya). </li>
+                        <li class="list-group-item">Membaca Al-Fatihah     : Membaca surat Al-Fatihah di setiap rakaat.</li>
+                        <li class="list-group-item">Rukuk                  : Membungkukan badan hingga punggung lurus dan tangan menyentuh lutut.</li>
+                        <li class="list-group-item">I'tidal                : Bangkit dari rukuk dan berdiri tegak kembali.</li>
+                        <li class="list-group-item">Sujud                  : Sujud dua kali dengan tuma'ninah (tenang) </li>
+                        <li class="list-group-item">Duduk diantara dua sujud: Duduk sejenak dengan tenang sebelum sujud berikutnya.</li>
+                        <li class="list-group-item">tasyahud Akhir         : Duduk untuk membaca tasyahud akhir.</li>
+                        <li class="list-group-item">Membaca Sholawat       : Membaca shalawat nabi dalam tasyahud akhir.</li>
+                        <li class="list-group-item">Salam                  : Memberikan salam ke kanan dan kiri.</li>
+                        <li class="list-group-item">Tertib                 : Melakukan semua rukun diatas secara berurutan.</li>
+                        <li class="list-group-item">Tuma'ninah             : Tenang dan tidak tergesa-gesa dalam beberapa gerakan seperti rukuk, i'tidal, sujud, dan duduk diantara dua sujud.</li>
+                        </ol>
+
+
+                    <h3 id="latihan2">3. Uji Pemahaman Fiqih, Suci dari Hadas dan Najis</h3>
+                    <p>Uji kemampuan Anda dalam memahami tata cara bersuci dan shalat.</p>
+                    <a href="https://bintangflorist.my.canva.site/salinan-dari-latihan-soal-thaharah-dan-sholat-untuk-anak" target="_blank" class="btn btn-warning btn-lg">Mulai Latihan Fiqih</a>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card bg-light mt-4 p-3 sticky-top sticky-top-adjusted shadow-sm">
+                        <h5 class="card-title text-success">Navigasi Materi 2</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#thaharah">➡️ Thaharah</a></li>
+                            <li><a href="#shalat">➡️ Rukun Shalat</a></li>
+                            <li><a href="#latihan2">➡️ Uji Pemahaman</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <hr class="my-5">
+        
+        <section id="materi3" class="content-section">
+            <h2 class="mb-4 text-success">3. Sejarah Kebudayaan Islam: Masa Kenabian</h2> 
+            
+            <div class="row">
+            
+                <div class="col-lg-8">
+                    <p class="lead">Mempelajari perkembangan awal Islam, dimulai dari masa Nabi Muhammad SAW hingga masa Khulafaur Rasyidin.</p>
+
+                    <hr>
+
+                    <h3 id="nabi">1. Biografi Nabi Muhammad SAW</h3>
+                    <p>Nabi Muhammad SAW lahir di kota Mekkah pada tahun Gajah. Beliau menerima wahyu pertama di Gua Hira pada usia 40 tahun, yang menandai dimulainya kenabian.</p>
+                    <div class="alert alert-danger text-center my-4">
+                        <p class="m-0">Video tentang Biografi Rasulullah di YouTube.</p>
+                        <a href="https://youtu.be/ee9kk_12sUQ?si=6nIl_f6lCLbEmz6c" target="_blank" class="btn btn-danger mt-2">
+                            KLIK DISINI
+                        </a>
+                    </div>
+
+                    <h3 id="khulafaur">2. Masa Khulafaur Rasyidin</h3>
+                    <p>Periode Khulafaur Rasyidin (Kepemimpinan yang Dibimbing) adalah masa setelah wafatnya Nabi Muhammad SAW. Periode ini dianggap sebagai model ideal kepemimpinan Islam karena para khalifah menjalankan pemerintahan berdasarkan Al-Qur'an dan Sunnah.</p>
+
+                    <p>Berikut adalah empat khalifah utama dan kontribusi mereka:</p>
+
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">
+                            <strong>Abu Bakar Ash-Shiddiq (632 M - 634 M):</strong> Fokus utamanya adalah memerangi kaum murtad (Perang Riddah) dan mengumpulkan lembaran-lembaran Al-Qur'an (kodifikasi awal).
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <strong>Umar bin Khattab (634 M - 644 M):</strong> Dikenal sebagai pendiri administrasi Islam modern. Beliau membentuk kalender Hijriah dan memperluas wilayah Islam secara masif hingga ke Persia dan Mesir.
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <strong>Utsman bin Affan (644 M - 656 M):</strong> Kontribusi terbesarnya adalah menyatukan mushaf Al-Qur'an yang dikenal sebagai Mushaf Utsmani, untuk menghindari perbedaan bacaan. Beliau juga memperluas Masjid Nabawi dan Masjidil Haram.
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <strong>Ali bin Abi Thalib (656 M - 661 M):</strong> Masa kepemimpinannya diwarnai konflik internal (fitnah kubra) yang memicu perpecahan politik di kalangan umat Islam. Beliau memindahkan pusat pemerintahan dari Madinah ke Kufah.
+                        </li>
+                    </ul>
+
+                    <p>Masa Khulafaur Rasyidin berakhir dengan diangkatnya Muawiyah bin Abu Sufyan, yang menandai dimulainya Dinasti Umayyah.</p>
+
+                    <h3 id="latihan3">3. Uji Pemahaman SKI</h3>
+                    <p>Uji kemampuan Anda dalam memahami sejarah awal peradaban Islam.</p>
+                    <a href="https://bintangflorist.my.canva.site/salinan-dari-quiz-sejarah-rasulullah-dan-khulafaur-rasyidin" target="_blank" class="btn btn-warning btn-lg">Mulai Latihan SKI</a>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card bg-light mt-4 p-3 sticky-top sticky-top-adjusted shadow-sm">
+                        <h5 class="card-title text-success">Navigasi Materi 3</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#nabi">➡️ Biografi Nabi SAW</a></li>
+                            <li><a href="#khulafaur">➡️ Khulafaur Rasyidin</a></li>
+                            <li><a href="#latihan3">➡️ Uji Pemahaman</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer class="mt-5 py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="m-0">&copy; 2025 Lilik Sokma Melati. Hak Cipta Dilindungi.</p>
+            <p class="m-0">
+                <a class="text-white mx-2" href="#tujuan">Tujuan Pembelajaran</a> | 
+                <a class="text-white mx-2" href="#">Kontak</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+</body>
+</html>
