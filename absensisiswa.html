@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Absensi Murid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        select, input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Absensi Murid</h2>
+    
+    <form action="#" method="post">
+        
+        <label for="tanggal">Tanggal</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+        
+        <label for="jam">Jam</label>
+        <select id="jam" name="jam" required>
+            <option value="">-- Pilih Jam --</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+        </select>
+
+        <label for="kelas">Kelas/Jurusan</label>
+        <input type="text" id="kelas" name="kelas" placeholder="Masukkan kelas/jurusan" required>
+
+        <label for="nama">Nama Murid</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama murid" required>
+
+        <label for="kehadiran">Kehadiran</label>
+        <select id="kehadiran" name="kehadiran" required>
+            <option value="">-- Pilih Kehadiran --</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+        </select>
+
+        <label for="keterangan">Keterangan</label>
+        <select id="keterangan" name="keterangan" required>
+            <option value="">-- Pilih Keterangan --</option>
+            <option value="Sakit">Sakit</option>
+            <option value="Alpa">Alpa</option>
+            <option value="Lainnya">Keterangan Lainnya</option>
+        </select>
+
+        <label for="catatan">Catatan</label>
+        <textarea id="catatan" name="catatan" rows="3" placeholder="Catatan tambahan (opsional)"></textarea>
+
+        <button type="submit">Kirim</button>
+    </form>
+</div>
+
+</body>
+</html>
