@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi Satelit & Manajemen Bencana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Mengubah Background Utama menjadi gambar */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        /* Mengubah Background Judul dengan gambar dari Pinterest */
+        .hero-section {
+            background-image: linear-gradient(rgba(30, 60, 114, 0.7), rgba(42, 82, 152, 0.7)), url('https://i.pinimg.com/1200x/03/99/37/0399373ce8bd6aafccbf4507e919c6d7.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 70px 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95); /* Efek kaca transparan putih */
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .bg-fenomena { background: #ffc107; color: #000; }
+        .bg-mitigasi { background: #0d6efd; }
+        .bg-respon { background: #0dcaf0; }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e3c72;
+            border-bottom: 3px solid #ffc107;
+            display: inline-block;
+            padding-bottom: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="fw-bold display-5"><i class="fa-solid fa-earth-asia me-3"></i>Edukasi Fenomena Alam & Mitigasi</h1>
+            <p class="lead mt-3 mb-1">Mempelajari interaksi Bulan dan Bumi, serta panduan lengkap manajemen bencana.</p>
+            <div class="badge bg-warning text-dark px-3 py-2 mt-3 fs-6 rounded-pill">
+                <i class="fa-solid fa-user-pen me-2"></i>Disusun oleh: Yonathan Adi Setiawan
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        
+        <h3 class="section-title">1. Eksplorasi Fenomena Alam</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalGerhana">
+                    <div class="icon-box bg-fenomena mx-auto"><i class="fa-solid fa-eclipse"></i></div>
+                    <h5 class="fw-bold">Gerhana Matahari</h5>
+                    <p class="text-muted small">Interaksi cahaya antara Matahari, Bulan, dan Bumi.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalLapisan">
+                    <div class="icon-box bg-fenomena mx-auto"><i class="fa-solid fa-layer-group"></i></div>
+                    <h5 class="fw-bold">Ketidakseimbangan Bumi</h5>
+                    <p class="text-muted small">Efek gravitasi bulan pada pasang surut & tektonik.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalBencana">
+                    <div class="icon-box bg-fenomena mx-auto"><i class="fa-solid fa-house-crack"></i></div>
+                    <h5 class="fw-bold">Bencana Alam</h5>
+                    <p class="text-muted small">Kenali jenis-jenis ancaman dari gejolak alam.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">2. Strategi Mitigasi Bencana</h3>
+        <div class="row g-4 mb-5 justify-content-center">
+            <div class="col-md-5">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalSistemMitigasi">
+                    <div class="icon-box bg-mitigasi mx-auto"><i class="fa-solid fa-shield-cat"></i></div>
+                    <h5 class="fw-bold">Mitigasi Bencana</h5>
+                    <p class="text-muted small">Upaya meminimalkan risiko sebelum terjadi ancaman.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalPraBencana">
+                    <div class="icon-box bg-mitigasi mx-auto"><i class="fa-solid fa-suitcase-medical"></i></div>
+                    <h5 class="fw-bold">Tindakan Pra-Bencana</h5>
+                    <p class="text-muted small">Persiapan Tas Siaga dan rencana jalur evakuasi.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">3. Penanganan & Evaluasi</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalSaatBencana">
+                    <div class="icon-box bg-respon mx-auto"><i class="fa-solid fa-person-running"></i></div>
+                    <h5 class="fw-bold">Tindakan Saat Bencana</h5>
+                    <p class="text-muted small">Prosedur penyelamatan diri secara tenang & cepat.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalPemulihan">
+                    <div class="icon-box bg-respon mx-auto"><i class="fa-solid fa-trowel-bricks"></i></div>
+                    <h5 class="fw-bold">Kegiatan Pemulihan</h5>
+                    <p class="text-muted small">Rehabilitasi infrastruktur dan mental penyintas.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalEvaluasi">
+                    <div class="icon-box bg-respon mx-auto"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h5 class="fw-bold">Kegiatan Evaluasi</h5>
+                    <p class="text-muted small">Mengkaji kekurangan respon untuk sistem yang lebih baik.</p>
+                    <span class="text-primary small fw-bold mt-auto">Klik untuk materi <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <div class="card card-custom p-4 p-md-5">
+                    <h3 class="fw-bold text-center text-primary mb-4"><i class="fa-solid fa-pencil text-warning me-2"></i>Asesmen Pengetahuan</h3>
+                    <p class="text-center text-muted mb-4">Uji pemahaman Anda dengan menjawab 10 pertanyaan di bawah ini.</p>
+                    
+                    <form id="quizForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">1. Bencana yang disebabkan oleh alam disebut...</p>
+                                    <label class="d-block"><input type="radio" name="q1" value="alam"> Alam</label>
+                                    <label class="d-block"><input type="radio" name="q1" value="sosial"> Sosial</label>
+                                    <label class="d-block"><input type="radio" name="q1" value="non-alam"> Non-alam</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">2. Contoh bencana alam adalah...</p>
+                                    <label class="d-block"><input type="radio" name="q2" value="gempa"> Gempa bumi</label>
+                                    <label class="d-block"><input type="radio" name="q2" value="konflik"> Konflik</label>
+                                    <label class="d-block"><input type="radio" name="q2" value="wabah"> Wabah</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">3. COVID-19 termasuk bencana...</p>
+                                    <label class="d-block"><input type="radio" name="q3" value="non-alam"> Non-alam</label>
+                                    <label class="d-block"><input type="radio" name="q3" value="sosial"> Sosial</label>
+                                    <label class="d-block"><input type="radio" name="q3" value="alam"> Alam</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">4. Ancaman disebut...</p>
+                                    <label class="d-block"><input type="radio" name="q4" value="hazard"> Hazard</label>
+                                    <label class="d-block"><input type="radio" name="q4" value="kapasitas"> Kapasitas</label>
+                                    <label class="d-block"><input type="radio" name="q4" value="risiko"> Risiko</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">5. Mitigasi adalah...</p>
+                                    <label class="d-block"><input type="radio" name="q5" value="pencegahan"> Pencegahan</label>
+                                    <label class="d-block"><input type="radio" name="q5" value="penyelamatan"> Penyelamatan</label>
+                                    <label class="d-block"><input type="radio" name="q5" value="evakuasi"> Evakuasi</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">6. Saat gempa...</p>
+                                    <label class="d-block"><input type="radio" name="q6" value="berlindung"> Berlindung</label>
+                                    <label class="d-block"><input type="radio" name="q6" value="lari"> Lari panik</label>
+                                    <label class="d-block"><input type="radio" name="q6" value="diam"> Diam</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">7. Tas siaga berisi...</p>
+                                    <label class="d-block"><input type="radio" name="q7" value="air"> Air & makanan</label>
+                                    <label class="d-block"><input type="radio" name="q7" value="mainan"> Mainan</label>
+                                    <label class="d-block"><input type="radio" name="q7" value="batu"> Batu</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">8. Banjir disebabkan...</p>
+                                    <label class="d-block"><input type="radio" name="q8" value="sampah"> Sampah</label>
+                                    <label class="d-block"><input type="radio" name="q8" value="api"> Api</label>
+                                    <label class="d-block"><input type="radio" name="q8" value="angin"> Angin</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">9. Setelah bencana...</p>
+                                    <label class="d-block"><input type="radio" name="q9" value="rekonstruksi"> Rekonstruksi</label>
+                                    <label class="d-block"><input type="radio" name="q9" value="mitigasi"> Mitigasi</label>
+                                    <label class="d-block"><input type="radio" name="q9" value="latihan"> Latihan</label>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">10. Kesiapsiagaan bertujuan...</p>
+                                    <label class="d-block"><input type="radio" name="q10" value="siap"> Siap menghadapi bencana</label>
+                                    <label class="d-block"><input type="radio" name="q10" value="bermain"> Bermain</label>
+                                    <label class="d-block"><input type="radio" name="q10" value="menghindari"> Menghindari belajar</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-lg px-5" onclick="hitungNilai()">Lihat Nilai Saya</button>
+                        </div>
+                    </form>
+
+                    <div id="hasilNilai" class="alert alert-success text-center mt-4 d-none shadow-sm">
+                        <h4 class="mb-0">Nilai Anda: <strong id="angkaNilai" class="fs-1 d-block mt-2">0</strong></h4>
+                        <p class="mt-2 mb-0" id="pesanNilai"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="modalGerhana" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-warning text-dark border-0">
+                    <h5 class="modal-title fw-bold">1. Gerhana Matahari</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Gerhana matahari terjadi ketika Bulan melintas di antara Bumi dan Matahari. Fenomena ini membuktikan bahwa Bulan memiliki jalur orbit yang presisi. Namun, radiasinya sangat berbahaya bagi mata telanjang.</p>
+                    <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/cFHEMVV0ZLY" title="Gerhana Matahari" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLapisan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-warning text-dark border-0">
+                    <h5 class="modal-title fw-bold">2. Ketidakseimbangan Lapisan Bumi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Gravitasi bulan tidak hanya menarik air laut, tetapi juga memberikan "tarikan" pada kerak bumi. Jika ada lempeng tektonik yang kritis, tarikan ini bisa memicu pergeseran lempeng.</p>
+                    <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/v8ij209gdIg" title="Ketidakseimbangan Bumi" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBencana" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-warning text-dark border-0">
+                    <h5 class="modal-title fw-bold">3. Bencana Alam</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Bencana alam adalah peristiwa ekstrem yang melampaui kemampuan kita untuk menanganinya secara normal, terbagi menjadi geologi dan hidrometeorologi.</p>
+                    <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/xgSp2FppSyA" title="Bencana Alam" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSistemMitigasi" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title fw-bold">4. Mitigasi Bencana Alam</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-start">Mitigasi adalah serangkaian upaya untuk mengurangi risiko bencana, baik melalui pembangunan fisik maupun penyadaran masyarakat.</p>
+                    <img src="https://rustfs-a.tabalongkab.go.id/jdih/limbat/01KDMJYAC5ZBVR4BN5M1QB2F33.jpg" class="img-fluid rounded shadow-sm mt-2 w-100" alt="Mitigasi Bencana">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPraBencana" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title fw-bold">5. Tindakan Pra-Bencana</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Langkah nyata sebelum bencana tiba, seperti menyiapkan Tas Siaga Bencana dan menentukan jalur evakuasi bersama keluarga.</p>
+                    <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/QT1eOjidfXc" title="Pra Bencana" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSaatBencana" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info text-white border-0">
+                    <h5 class="modal-title fw-bold">6. Tindakan Saat Bencana</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-start">Kunci utamanya adalah JANGAN PANIK. Jika terjadi gempa terapkan prinsip: Drop, Cover, Hold on. Ikuti arahan petugas dengan tertib.</p>
+                    <img src="https://bpbd.probolinggokota.go.id/public/img/informasi/profil/1694674792_c58fd03cf3dafd2f1e80.jpeg" class="img-fluid rounded shadow-sm mt-2 w-100" alt="Saat Bencana">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPemulihan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info text-white border-0">
+                    <h5 class="modal-title fw-bold">7. Kegiatan Pemulihan</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-start">Fase ini mencakup pembangunan kembali fasilitas umum, perbaikan alam, dan dukungan psikososial (trauma healing) bagi korban.</p>
+                    <img src="https://bbksdajatim.org/wp-content/uploads/2026/02/20260227-Refleksi-Tahun-Ketiga-Pemulihan-Ekosistem-di-Cagar-Alam-Pulau-Bawean-820x394.jpg" class="img-fluid rounded shadow-sm mt-2 w-100" alt="Pemulihan">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEvaluasi" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info text-white border-0">
+                    <h5 class="modal-title fw-bold">8. Kegiatan Evaluasi</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-start">Evaluasi melibatkan analisis tentang apa yang berhasil dan apa yang gagal selama penanganan untuk membangun sistem yang lebih baik (Build Back Better).</p>
+                    <img src="https://moondoggiesmusic.com/wp-content/uploads/2019/07/Tujuan-Evaluasi.jpg" class="img-fluid rounded shadow-sm mt-2 w-100" alt="Evaluasi">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 1. Script menghentikan video otomatis saat modal ditutup
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function(modal) {
+            modal.addEventListener('hidden.bs.modal', function (e) {
+                var iframe = this.querySelector('iframe');
+                if (iframe) {
+                    var tempSrc = iframe.src;
+                    iframe.src = tempSrc;
+                }
+            });
+        });
+
+        // 2. Script Penilaian Kuis
+        function hitungNilai() {
+            // Kunci Jawaban
+            const kunciJawaban = {
+                q1: 'alam',
+                q2: 'gempa',
+                q3: 'non-alam',
+                q4: 'hazard',
+                q5: 'pencegahan',
+                q6: 'berlindung',
+                q7: 'air',
+                q8: 'sampah',
+                q9: 'rekonstruksi',
+                q10: 'siap'
+            };
+
+            let skor = 0;
+            let totalSoal = 10;
+            let form = document.forms['quizForm'];
+            let semuaTerjawab = true;
+
+            // Hitung setiap soal
+            for (let kunci in kunciJawaban) {
+                let pilihan = form.elements[kunci].value;
+                if (!pilihan) {
+                    semuaTerjawab = false;
+                }
+                if (pilihan === kunciJawaban[kunci]) {
+                    skor += 10; // Setiap soal bernilai 10 (Total 100)
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("Harap jawab semua pertanyaan terlebih dahulu sebelum mengecek nilai!");
+                return;
+            }
+
+            // Menampilkan Hasil
+            let elementHasil = document.getElementById('hasilNilai');
+            let textSkor = document.getElementById('angkaNilai');
+            let pesan = document.getElementById('pesanNilai');
+
+            textSkor.innerText = skor;
+            
+            // Memberikan warna box berdasarkan nilai
+            elementHasil.classList.remove('d-none', 'alert-success', 'alert-warning', 'alert-danger');
+            
+            if (skor >= 80) {
+                elementHasil.classList.add('alert-success');
+                pesan.innerText = "Luar biasa! Pemahaman Anda tentang mitigasi bencana sangat baik.";
+            } else if (skor >= 60) {
+                elementHasil.classList.add('alert-warning');
+                pesan.innerText = "Bagus! Terus pelajari materi untuk hasil yang lebih maksimal.";
+            } else {
+                elementHasil.classList.add('alert-danger');
+                pesan.innerText = "Jangan menyerah, mari pelajari kembali materi pada menu di atas.";
+            }
+        }
+    </script>
+</body>
+</html>
