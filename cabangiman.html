@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syu'abul Iman | Eksplorasi Cabang Iman</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #0d9488;
+            --accent-color: #fbbf24;
+            --bg-color: #f8fafc;
+            --text-main: #334155;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/89/d0/96/89d09644ef0333bb815309151e14085c.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background-image: url('https://i.pinimg.com/736x/03/ed/2e/03ed2e25be55be2a7bd4c79e2fc39aa5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 80px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Overlay gelap agar teks terbaca */
+            z-index: 1;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1, .serif-title { font-family: 'Playfair Display', serif; }
+
+        .custom-card {
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.9); /* Sedikit transparan */
+            cursor: pointer;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+            border-color: var(--secondary-color);
+        }
+
+        .icon-box {
+            width: 70px; height: 70px;
+            background: rgba(13, 148, 136, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+        }
+
+        .section-title { position: relative; margin-bottom: 50px; font-weight: 700; color: white; /* Teks putih di background utama baru */ }
+        .section-title::after {
+            content: ''; width: 60px; height: 4px; background: var(--accent-color);
+            position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
+        }
+
+        .modal-content { border-radius: 24px; border: none; }
+        
+        .dalil-text {
+            background: #f0fdfa; border-left: 4px solid var(--primary-color);
+            padding: 15px 20px; font-style: italic; border-radius: 0 12px 12px 0;
+            color: #0f766e; font-weight: 600; font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .materi-list li { margin-bottom: 8px; }
+        .modal-body { max-height: 75vh; overflow-y: auto; }
+
+        footer { background-color: #1e293b; color: #cbd5e1; padding: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="badge bg-light text-success mb-3 px-3 py-2 rounded-pill fw-bold shadow-sm">Modul Interaktif PAI</span>
+            <h1 class="display-4 fw-bold mb-3">Dimensi & Cabang Iman</h1>
+            <p class="lead mb-0 mx-auto" style="max-width: 700px; opacity: 0.9;">
+                Mengeksplorasi pilar-pilar akhlak mulia sebagai manifestasi keimanan yang sejati.
+            </p>
+        </div>
+    </header>
+
+    <main class="container my-5 pt-4">
+        
+        <section class="mb-5 pb-4">
+            <h2 class="section-title text-center">Analisis Empat Pilar Akhlak</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 custom-card shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalMuruah">
+                        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h5 class="fw-bold text-dark">Muru'ah</h5>
+                        <p class="small text-muted">Menjaga martabat dan harga diri.</p>
+                        <button class="btn btn-outline-success btn-sm w-100 rounded-pill mt-auto">Buka Video & Materi</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 custom-card shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalIkhlas">
+                        <div class="icon-box"><i class="fa-solid fa-gem"></i></div>
+                        <h5 class="fw-bold text-dark">Ikhlas</h5>
+                        <p class="small text-muted">Pemurnian niat dalam hati.</p>
+                        <button class="btn btn-outline-success btn-sm w-100 rounded-pill mt-auto">Buka Video & Materi</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 custom-card shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalMalu">
+                        <div class="icon-box"><i class="fa-solid fa-eye-lowered"></i></div>
+                        <h5 class="fw-bold text-dark">Al-Haya'</h5>
+                        <p class="small text-muted">Benteng moralitas (rasa malu).</p>
+                        <button class="btn btn-outline-success btn-sm w-100 rounded-pill mt-auto">Buka Video & Materi</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 custom-card shadow-sm p-4 text-center" data-bs-toggle="modal" data-bs-target="#modalZuhud">
+                        <div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h5 class="fw-bold text-dark">Zuhud</h5>
+                        <p class="small text-muted">Proporsionalitas dunia & akhirat.</p>
+                        <button class="btn btn-outline-success btn-sm w-100 rounded-pill mt-auto">Buka Video & Materi</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 pb-4">
+            <div class="row align-items-center bg-white rounded-4 shadow-sm p-4 p-lg-5" style="background: rgba(255, 255, 255, 0.95) !important;">
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="fw-bold mb-4 serif-title text-dark">Eksistensi Syu'abul Iman</h2>
+                    <p class="text-muted">Pelajari konsep dasar 77 cabang iman melalui video ringkasan berikut untuk memahami bagaimana iman bekerja dalam hati, lisan, dan perbuatan.</p>
+                    <div class="alert dalil-text border-0 mt-4 shadow-sm">
+                        "Iman memiliki 70 lebih cabang... yang paling rendah adalah menyingkirkan gangguan dari jalan." (HR. Muslim)
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-4 border-white">
+                        <iframe src="https://www.youtube.com/embed/oeMbwRc0ccI" title="Konsep Syu'abul Iman" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="modalMuruah" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom">
+                        <h4 class="fw-bold mb-0 serif-title" style="color: var(--primary-color);">Menjaga Kehormatan</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-4">
+                            <iframe src="https://www.youtube.com/embed/LA0mlVJAjaQ" title="Materi Muruah" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-book-open me-2"></i>Istilah Terkait Menjaga Harga Diri:</h6>
+                        <ol class="materi-list text-muted mb-4">
+                            <li><strong>Iffah:</strong> Kemampuan untuk menahan dorongan nafsu baik saat memenuhi kebutuhan pangan, sandang, and papan.</li>
+                            <li><strong>Izzah:</strong> Tuntutan untuk manusia menjaga kehormatan dan kemuliaan diri, agama, dan kaum muslimin.</li>
+                            <li><strong>Muruah:</strong> Menjaga sikap dan perilaku sehingga tetap terjaga kehormatan dan kemuliaannya baik di mata Allah dan manusia.</li>
+                        </ol>
+
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-scale-unbalanced me-2"></i>Dasar Hukum:</h6>
+                        <div class="dalil-text">
+                            <strong>Muruah:</strong> Rasulullah SAW bersabda: "Barang siapa yang berusaha menjaga kehormatannya, maka Allah akan menjaga kehormatannya..." (HR. Bukhari No. 1427).
+                        </div>
+                        <div class="dalil-text">
+                            <strong>Iffah:</strong> "Dan orang-orang yang tidak mampu menikah hendaklah menjaga diri (iffah) (dari perbuatan haram), sehingga Allah memampukan mereka dengan karunia-Nya..." (QS. An-Nur: 33).
+                        </div>
+                        <div class="dalil-text">
+                            <strong>Izzah:</strong> "...Apakah mereka mencari kekuatan di sisi orang-orang kafir itu? Maka sesungguhnya semua kekuatan itu milik Allah." (QS. An-Nisa: 139).
+                        </div>
+
+                        <h6 class="fw-bold text-primary-emphasis mt-4 mb-3"><i class="fa-solid fa-check-circle me-2"></i>Manfaat Menjaga Harga Diri:</h6>
+                        <ul class="materi-list text-muted mb-0">
+                            <li>Menumbuhkan tekad untuk menjaga kehormatan diri dan citra islam.</li>
+                            <li>Melahirkan kekuatan dan kemuliaan.</li>
+                            <li>Memunculkan pribadi muslim yang utuh dan bangga terhadap profesi yang diemban.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalIkhlas" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom">
+                        <h4 class="fw-bold mb-0 serif-title" style="color: var(--primary-color);">Ikhlas</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-4">
+                            <iframe src="https://www.youtube.com/embed/TdRQZpXa54w" title="Materi Ikhlas" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        
+                        <p class="text-muted mb-4"><strong>Ikhlas</strong> adalah melakukan amal hanya karena Allah SWT tanpa mengharap pujian manusia.</p>
+
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-scale-unbalanced me-2"></i>Dasar Hukum (Dalil):</h6>
+                        <div class="dalil-text">
+                            Hadis Riwayat Bukhari dan Muslim: "Sesungguhnya amal itu tergantung pada niatnya, dan seseorang hanya mendapatkan sesuai apa yang ia niatkan".
+                        </div>
+
+                        <h6 class="fw-bold text-primary-emphasis mt-4 mb-3"><i class="fa-solid fa-check-circle me-2"></i>Manfaat Ikhlas:</h6>
+                        <ol class="materi-list text-muted mb-0">
+                            <li>Ketenangan Batin.</li>
+                            <li>Terhindar dari Godaan Setan.</li>
+                            <li>Meningkatkan Kualitas Diri.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalMalu" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom">
+                        <h4 class="fw-bold mb-0 serif-title" style="color: var(--primary-color);">Al-Haya' (Rasa Malu)</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-4">
+                            <iframe src="https://www.youtube.com/embed/r1izxyHlQ28" title="Materi Malu" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-book-open me-2"></i>Pengertian:</h6>
+                        <ol class="materi-list text-muted mb-4">
+                            <li>Perbuatan menjauhi hal yang dibenci.</li>
+                            <li>Menahan diri dari sikap atau perilaku yang berakibat negatif.</li>
+                            <li>Sikap atau Perilaku yang tidak senang jika perbuatannya diketahui orang lain.</li>
+                        </ol>
+
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-scale-unbalanced me-2"></i>Dasar Hukum:</h6>
+                        <div class="dalil-text">
+                            "Wahai orang-orang yang beriman, masuklah ke dalam Islam (kedamaian) secara menyeluruh dan janganlah ikuti langkah-langkah setan! Sesungguhnya ia musuh yang nyata bagimu." (QS. Al Baqarah : 208)
+                        </div>
+
+                        <h6 class="fw-bold text-primary-emphasis mt-4 mb-2"><i class="fa-solid fa-link me-2"></i>Hubungan Haya' dan Iman:</h6>
+                        <p class="text-muted mb-4">
+                            Hubungan antara haya’ (rasa malu) dan iman sangat erat dalam ajaran Islam. Orang yang memiliki iman akan memiliki rasa malu dalam dirinya. Rasa malu ini membuat seseorang enggan melakukan perbuatan buruk dan mendorongnya untuk berbuat baik. Misalnya, malu untuk berbohong, malu meninggalkan shalat, dan malu melakukan hal yang tidak pantas.
+                        </p>
+
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-check-circle me-2"></i>Manfaat Haya’ dalam Kehidupan:</h6>
+                        <ul class="materi-list text-muted mb-0">
+                            <li>Menjaga diri dari perbuatan dosa.</li>
+                            <li>Menjaga kehormatan diri (muru’ah).</li>
+                            <li>Menjadi tanda kuatnya iman.</li>
+                            <li>Mendapat kepercayaan dan dihormati orang lain.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalZuhud" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom">
+                        <h4 class="fw-bold mb-0 serif-title" style="color: var(--primary-color);">Zuhud</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-4">
+                            <iframe src="https://www.youtube.com/embed/7YGpgxg8VrQ" title="Materi Zuhud" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-book-open me-2"></i>Pengertian:</h6>
+                        <ol class="materi-list text-muted mb-4">
+                            <li>Meninggalkan sesuatu yang tidak bermanfaat untuk kepentingan akhirat.</li>
+                            <li>Meninggalkan kecenderungan yang berlebihan pada urusan duniawi.</li>
+                        </ol>
+
+                        <h6 class="fw-bold text-primary-emphasis mb-3"><i class="fa-solid fa-scale-unbalanced me-2"></i>Dasar Hukum:</h6>
+                        <div class="dalil-text">
+                            "(Yang demikian itu kami tetapkan) agar kamu tidak bersedih terhadap apa yang luput dari kamu dan tidak pula terlalu gembira terhadap apa yang diberikan-Nya kepadamu. Allah tidak menyukai setiap orang yang sombong lagi membanggakan diri." (QS. Al Hadid: 23)
+                        </div>
+
+                        <h6 class="fw-bold text-primary-emphasis mt-4 mb-2"><i class="fa-solid fa-compass me-2"></i>Cara Menerapkan Zuhud:</h6>
+                        <p class="text-muted mb-0">
+                            Fokus pada akhirat, menyadari bahwa dunia hanya sementara, selalu bersyukur, serta tidak berlebihan dalam mencari dan memiliki harta agar tidak lalai dari mengingat Allah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <h5 class="fw-bold text-white mb-2 serif-title">Media Pembelajaran Digital Interaktif</h5>
+            <p class="mb-0 fs-6">
+                Disusun & Dikembangkan oleh: <br>
+                <strong class="text-white fs-5 mt-1 d-inline-block">Wafiruddin Isnan</strong>
+            </p>
+            <p class="small mt-4 opacity-50">&copy; 2026 Hak Cipta Dilindungi</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.querySelectorAll('.modal').forEach(function(modal) {
+            modal.addEventListener('hidden.bs.modal', function () {
+                let iframe = modal.querySelector('iframe');
+                if (iframe) {
+                    let currentSrc = iframe.src;
+                    iframe.src = currentSrc; 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
